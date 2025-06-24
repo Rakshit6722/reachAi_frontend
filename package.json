@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^2.8.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-form": "^4.0.1",
     "react-hook-form": "^7.58.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.2",
@@ -54,7 +55,10 @@
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
   },
-  "lint-staged":{
-    "*.{ts,tsx,js,jsx}": ["eslint --fix","prettier --write"]
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
