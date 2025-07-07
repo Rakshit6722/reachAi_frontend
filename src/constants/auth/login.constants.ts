@@ -1,0 +1,15 @@
+export const loginContent = {
+  title: "Welcome Back",
+  subtitle: "Sign in to your ReachAI account",
+  emailLabel: "Email Address",
+  emailPlaceholder: "Enter your email",
+  passwordLabel: "Password",
+  passwordPlaceholder: "Enter your password",
+  rememberMe: "Remember me",
+  forgotPassword: "Forgot password?",
+  signIn: "Sign In",
+  dividerText: "Or continue with",
+  googleButton: "Google",
+  noAccount: "Don't have an account?",
+  signUp: "Sign up",
+};

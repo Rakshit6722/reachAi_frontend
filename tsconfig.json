@@ -8,14 +8,4 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*":["components/*"],
-      "@hooks":["hooks/*"],
-      "@constants/*":["constants/*"],
-      "@assets/*":["assets/*"],
-      "@utils/*":["utils/*"]
-    }
-  }
 }
