@@ -1,4 +1,4 @@
-export const routes = {
+export const routes = { 
     default: '/',
     dashboard:{
         root:'/dashboard',
