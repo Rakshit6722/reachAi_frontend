@@ -93,7 +93,7 @@ function CampaignCard({
                                             variant="ghost"
                                             size="sm"
                                             className="h-8 w-8 p-0"
-                                            onClick={(e) => e.stopPropagation()} // Prevent parent click
+                                            onClick={(e) => e.stopPropagation()}
                                         >
                                             <Trash2 size={16} className="text-red-600" />
                                         </Button>

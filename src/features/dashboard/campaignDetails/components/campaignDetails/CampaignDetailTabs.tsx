@@ -34,7 +34,6 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
     const [bodyValue, setBodyValue] = useState(details?.body || '')
     const queryClient = useQueryClient()
 
-    // Subject update mutation
     const subjectMutation = useMutation({
         mutationFn: () => updateCampaignSubjectService(details.id, { subject: subjectValue }),
         onSuccess: () => {
@@ -47,7 +46,6 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
         }
     })
 
-    // Body update mutation
     const bodyMutation = useMutation({
         mutationFn: () => updateCampaignBodyService(details.id, { body: bodyValue }),
         onSuccess: () => {
@@ -60,13 +58,11 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
         }
     })
 
-    // Cancel subject editing
     const handleCancelSubject = () => {
         setIsEditingSubject(false)
         setSubjectValue(details?.subject || '')
     }
 
-    // Cancel body editing
     const handleCancelBody = () => {
         setIsEditingBody(false)
         setBodyValue(details?.body || '')
@@ -241,7 +237,7 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
             </TabsContent>
 
             <LeadDetailTab leadsCount={leadsCount} details={details} />
-
+                 
             <EmailSent details={details} />
         </Tabs>
     )

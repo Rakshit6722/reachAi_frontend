@@ -1,24 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/components/ui/card'
-import { TabsContent } from '@components/components/ui/tabs'
-import { Button } from '@components/components/ui/button'
-import { Badge } from '@components/components/ui/badge'
-import { Calendar, Clock, Mail, Send, AlertCircle, CheckCircle, Ban, Loader2, CalendarClock } from 'lucide-react'
 import React, { useState } from 'react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@components/components/ui/tooltip'
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogFooter,
-  DialogDescription 
-} from '@components/components/ui/dialog'
-import StatusBadge from './StatusBadge'
 import EmailTabContent from './EmailTabContent'
 
 // Types for EmailSent
@@ -60,7 +40,6 @@ function EmailSent({details}: EmailSpentProps) {
   const [scheduledDate, setScheduledDate] = useState<string>('')
   const [scheduledTime, setScheduledTime] = useState<string>('')
 
-  // Get the current date and time for default schedule values
   const now = new Date()
   const tomorrow = new Date(now)
   tomorrow.setDate(tomorrow.getDate() + 1)
