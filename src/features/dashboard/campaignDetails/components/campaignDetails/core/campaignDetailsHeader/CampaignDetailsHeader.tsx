@@ -3,7 +3,7 @@ import { Pencil, Check, X, Loader2 } from 'lucide-react'
 import { Button } from '@components/components/ui/button'
 import { Input } from '@components/components/ui/input'
 
-import useEditCampaignDetailHeader from '../../../hooks/useEditCampaignDetailHeader'
+import useEditCampaignDetailHeader from '../../../../hooks/useEditCampaignDetailHeader'
 import ImportCsvLeads from './ImportCsvLeads'
 import ImportLeadsButton from './ImportLeadsButton'
 

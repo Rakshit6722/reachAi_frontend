@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { FileSpreadsheet, Upload, X, AlertCircle, CheckCircle, FileDown, Loader2 } from 'lucide-react'
 import { Button } from '@components/components/ui/button'
 import CustomTooltip from '@components/common/CustomTooltip'
-import useImportCsvLeads from '../../../hooks/useImportCsvLeads'
+import useImportCsvLeads from '../../../../hooks/useImportCsvLeads'
 import {
     Dialog,
     DialogContent,
@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom'
 import { Alert, AlertDescription, AlertTitle } from '@components/components/ui/alert'
 import { sampleCsvData } from '@constants/csvUpload/csvUpload.constant'
 import { downloadSampleCsv } from '@utils/csv'
-import { validateCsvFile } from '../../../validator/csv.validator'
+import { validateCsvFile } from '../../../../validator/csv.validator'
 
 function ImportCsvLeads() {
     const { campaignId } = useParams<{ campaignId: string }>();

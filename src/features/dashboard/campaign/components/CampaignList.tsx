@@ -11,7 +11,7 @@ import { formatDate } from '@utils/campaign'
 import EmptyCampaignListPlaceholder from './EmptyCampaignListPlaceholder'
 import CustomTab from '@components/common/CustomTab'
 import { TableHeader, TabList } from '@constants/dashboard/campaign.constant'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom"
 import { routes } from '../../../../router/routes'
 import type { campaign } from '@t/campaign/campign'
 
@@ -150,16 +150,14 @@ function CampaignList() {
                 {/* Campaign cards */}
                 <div className="divide-y divide-gray-100">
                     {campaigns.map((campaign: campaign) => (
-                        <NavLink to={`/dashboard/campaigns/${campaign.id}`}>
-                            <CampaignCard
-                                id={campaign.id}
-                                key={campaign.id}
-                                name={campaign.name}
-                                status={campaign?.status || 'draft'}
-                                createdAt={formatDate(campaign?.createdAt)}
-                                leadsLength={campaign?.leads?.length || 0}
-                            />
-                        </NavLink>
+                        <CampaignCard
+                            id={campaign.id}
+                            key={campaign.id}
+                            name={campaign.name}
+                            status={campaign?.status || 'draft'}
+                            createdAt={formatDate(campaign?.createdAt)}
+                            leadsLength={campaign?.leads?.length || 0}
+                        />
                     ))}
                 </div>
             </div>

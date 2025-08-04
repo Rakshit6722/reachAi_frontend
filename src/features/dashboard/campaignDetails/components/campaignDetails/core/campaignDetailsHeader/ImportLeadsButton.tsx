@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { UserPlus, Loader2 } from 'lucide-react'
 import { Button } from '@components/components/ui/button'
 import CustomTooltip from '@components/common/CustomTooltip'
-import useImportLeads from '../../../hooks/useImportLeads'
+import useImportLeads from '../../../../hooks/useImportLeads'
 import {
     Dialog,
     DialogContent,

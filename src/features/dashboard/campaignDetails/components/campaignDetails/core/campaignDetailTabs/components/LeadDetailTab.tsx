@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@comp
 import { TabsContent } from '@components/components/ui/tabs'
 import { ChevronRight, Users } from 'lucide-react'
 import React from 'react'
-import LeadCard from '../leads/LeadCard'
+import LeadCard from '../../../../common/leads/LeadCard'
 import type { Lead } from '@t/campaign/lead'
 
 type LeadDetailProps = {

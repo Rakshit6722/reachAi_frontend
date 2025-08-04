@@ -1,4 +1,4 @@
 export interface createEmailPayload{
-    body: string;
-    subject: string;
+    body?: string | undefined;
+    subject?: string | undefined;
 }

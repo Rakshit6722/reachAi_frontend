@@ -1,7 +1,7 @@
 import { apiConnector } from "@services/api-client/api"
 import type { createEmailPayload } from "@t/email-sent/create-email"
 
-const baseUrl = `${import.meta.env.BASE_URL}/api/campaign`
+const baseUrl = `${import.meta.env.VITE_API_BASE_URL}/api/campaign`
 
 export const createEmail = async (campaignId: number, payload?: createEmailPayload) => {
     try{

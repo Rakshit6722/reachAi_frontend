@@ -1,16 +1,15 @@
+import React, { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@components/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/components/ui/tabs'
-import { ChevronRight, Paperclip, Users, Pencil, Check, X, Loader2, Mail } from 'lucide-react'
+import { Pencil, Check, X, Loader2 } from 'lucide-react'
 import { Input } from '@components/components/ui/input'
 import { Textarea } from '@components/components/ui/textarea'
 import { Button } from '@components/components/ui/button'
-import React, { useState } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { updateCampaignSubjectService, updateCampaignBodyService } from '@services/campaign/campaign.api'
 import { customToast } from '@utils/toast'
-import { Badge } from '@components/components/ui/badge'
-import LeadDetailTab from './campaignDetailTabs/LeadDetailTab'
-import EmailSent from './campaignDetailTabs/emailSentTab/EmailSentTab'
+import EmailSent from './components/emailSentTab/EmailSentTab'
+import LeadDetailTab from './components/LeadDetailTab'
 
 type TabsProp = {
     details: {
@@ -33,7 +32,9 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
     const [subjectValue, setSubjectValue] = useState(details?.subject || '')
     const [bodyValue, setBodyValue] = useState(details?.body || '')
     const queryClient = useQueryClient()
+    const [activeTab, setActiveTab] = useState("email")
 
+    // Subject update mutation
     const subjectMutation = useMutation({
         mutationFn: () => updateCampaignSubjectService(details.id, { subject: subjectValue }),
         onSuccess: () => {
@@ -46,6 +47,7 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
         }
     })
 
+    // Body update mutation
     const bodyMutation = useMutation({
         mutationFn: () => updateCampaignBodyService(details.id, { body: bodyValue }),
         onSuccess: () => {
@@ -58,18 +60,20 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
         }
     })
 
+    // Cancel subject editing
     const handleCancelSubject = () => {
         setIsEditingSubject(false)
         setSubjectValue(details?.subject || '')
     }
 
+    // Cancel body editing
     const handleCancelBody = () => {
         setIsEditingBody(false)
         setBodyValue(details?.body || '')
     }
 
     return (
-        <Tabs defaultValue="email" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 bg-gray-100 p-1">
                 <TabsTrigger value="email" className="data-[state=active]:bg-white data-[state=active]:text-blue-700 data-[state=active]:shadow-sm">
                     Email Content
@@ -236,9 +240,11 @@ function CampaignDetailTabs({ details, leadsCount }: TabsProp) {
                 </Card>
             </TabsContent>
 
-            <LeadDetailTab leadsCount={leadsCount} details={details} />
-                 
-            <EmailSent details={details} />
+            <TabsContent value="leads">
+                <LeadDetailTab leadsCount={leadsCount} details={details} />
+            </TabsContent>
+
+            <EmailSent details={details} setActiveTab={setActiveTab} />
         </Tabs>
     )
 }

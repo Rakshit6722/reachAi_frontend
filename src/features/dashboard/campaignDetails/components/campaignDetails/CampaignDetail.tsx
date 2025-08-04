@@ -1,9 +1,10 @@
 import React from 'react'
 import { format } from 'date-fns'
 import { getStatusColors } from '@utils/campaign'
-import CampaignDetailsHeader from './campaignDetailsHeader/CampaignDetailsHeader'
-import CampaignDetailsStatCards from './CampaignDetailsStatCards'
-import CampaignDetailTabs from './CampaignDetailTabs'
+import CampaignDetailsHeader from './core/campaignDetailsHeader/CampaignDetailsHeader'
+import CampaignDetailsStatCards from './core/campaignDetailStatCards/CampaignDetailsStatCards'
+import CampaignDetailTabs from './core/campaignDetailTabs/CampaignDetailTabs'
+
 
 type CampaignDetailProps = {
   details: {

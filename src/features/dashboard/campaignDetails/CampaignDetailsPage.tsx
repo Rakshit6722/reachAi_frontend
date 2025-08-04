@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom'
 import { Button } from '@components/components/ui/button'
 import { Card, CardContent } from '@components/components/ui/card'
 import { AlertCircle, Loader2, RefreshCw } from 'lucide-react'
-import CampaignDetail from './components/campaignDetails/CampaignDetail'
 import CampaignDetailsSkeleton from './components/common/CampaignDetailsSkeleton'
+import CampaignDetail from './components/campaignDetails/CampaignDetail'
 
 function CampaignDetailsPage() {
   const location = useLocation()
